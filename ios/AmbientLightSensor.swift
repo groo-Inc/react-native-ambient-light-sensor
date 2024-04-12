@@ -31,6 +31,7 @@ class AmbientLightSensor: RCTEventEmitter, AVCaptureVideoDataOutputSampleBufferD
         isObserving = true;
 
         if (!isSetup) {
+          isSetup = true
           setupCaptureSession();
         }
     }
