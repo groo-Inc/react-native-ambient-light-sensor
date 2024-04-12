@@ -11,8 +11,8 @@ class AmbientLightSensor: RCTEventEmitter, AVCaptureVideoDataOutputSampleBufferD
     private let captureSession = AVCaptureSession()
     private let videoOutput = AVCaptureVideoDataOutput()
 
-    private let isSetup = false
-    private let isObserving = false
+    private var isSetup = false
+    private var isObserving = false
 
     override init() {
         super.init()
@@ -30,7 +30,7 @@ class AmbientLightSensor: RCTEventEmitter, AVCaptureVideoDataOutputSampleBufferD
     @objc func startLightSensor() -> Void {
         isObserving = true;
 
-        if (!isSetup) {
+        if (isSetup === false) {
           setupCaptureSession();
         }
     }
