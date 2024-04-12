@@ -30,7 +30,7 @@ class AmbientLightSensor: RCTEventEmitter, AVCaptureVideoDataOutputSampleBufferD
     @objc func startLightSensor() -> Void {
         isObserving = true;
 
-        if (isSetup === false) {
+        if (!isSetup) {
           setupCaptureSession();
         }
     }
